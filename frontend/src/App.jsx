@@ -9,9 +9,9 @@ import About from "./pages/About";
 function App() {
   return (
     <Router>
-      <Routes>
+      <Routes className="bg-background ">
         <Route path="/" element={<Home />} />
-        <Route path="/designs" element={<Designs />} />
+        <Route path="/design" element={<Designs />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>

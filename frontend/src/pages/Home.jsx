@@ -1,59 +1,54 @@
-import React from "react";
-import reactLogo from "../assets/react.svg";
-import mcdonalds from "../assets/mcdonalds.svg";
+
+import logo from "../assets/logo.svg"
+import LogoPattern from "../components/LogoPattern";
+import Logo from "../assets/Logo";
 
 const Home = () => {
   return (
-    <div className="flex justify-between  w-full  bg-yellow-300">
-      {/* Left Section */}
-      <div className="bg-red-400 flex items-center">
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-
-      {/* Center Section */}
-      <div className="flex-grow bg-purple-400 flex items-center justify-center">
-        text
-      </div>
-
-      {/* Right Section */}
-      <div className="flex flex-col bg-blue-500 items-end">
-
+    <div className="flex flex-col justify-between w-full h-screen bg-gray-100">
+      {/* ACIRA Pattern */}
+      <div className="py-10 flex items-center justify-center">
+        {/* <LogoPattern /> */}
+        <Logo className={`fill-blue w-[30vh] md:w-[55vh]`} />
         
-      <div className="flex flex-row items-center justify-center font-primary text-5xl capitalize mb-2 py-5">
-          <a href="/" className="px-5">
-            Home
-          </a>
-          <img src={mcdonalds} alt="" className="w-10"/>
-          
+      </div>
+      
+
+      {/* Main Content */}
+      <div className="flex justify-between items-center p-8 ">
+        {/* Left Section */}
+        <div className="flex flex-col gap-5 font-primary text-gray text-4xl tracking-wider ">
+          <h1>DESIGN GENERALIST</h1>
+          <h1>INTERNET SAVANT</h1>
+          <h1>DEVELOPER</h1>
+          <h1>ARTIST</h1>
         </div>
 
-        <div className="flex flex-row items-center justify-center font-primary text-5xl capitalize mb-2 py-5">
-          <a href="/" className="px-5">
-            Designs
-          </a>
-          <img src={mcdonalds} alt="" className="w-10"/>
-          
-        </div>
-
-        <div className="flex flex-row items-center justify-center font-primary text-5xl capitalize mb-2 py-5">
-          <a href="/" className="px-5">
-            Music
-          </a>
-          <img src={mcdonalds} alt="" className="w-10"/>
-          
-        </div>
-
-
-        <div className="flex flex-row items-center justify-center font-primary text-5xl capitalize mb-2 py-5">
-          <a href="/" className="px-5">
-            About
-          </a>
-          <img src={mcdonalds} alt="" className="w-10"/>
-          
+        {/* Placeholder for Right Section */}
+        <div className="grid grid-cols-2 gap-4">
+          {Array(4)
+            .fill(null)
+            .map((_, index) => (
+              <div key={index} className="bg-gray-200 h-20 w-36 rounded-lg"></div>
+            ))}
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="flex justify-between items-center p-8">
+        <div className="flex font-primary text-blue gap-10 text-5xl ">
+          <a href="/design" className="hover:text-red transition duration-700">
+            DESIGN
+          </a>
+          <a href="/music" className="hover:text-red transition duration-700">
+            MUSIC
+          </a>
+          <a href="/about" className="hover:text-red transition duration-700">
+            ABOUT
+          </a>
+        </div>
+        <div className="flex font-secondary font-medium text-gray text-xl" >DESIGNED & DEVELOPED BY <b>ACHIRA SILVA</b></div>
+      </footer>
     </div>
   );
 };
