@@ -6,12 +6,7 @@ import Logo from "../assets/Logo";
 const Home = () => {
   return (
     <div className="flex flex-col justify-between w-full h-screen bg-gray-100">
-      {/* ACIRA Pattern */}
-      <div className="py-10 flex items-center justify-center">
-        {/* <LogoPattern /> */}
-        <Logo className={`fill-blue w-[30vh] md:w-[55vh]`} />
-        
-      </div>
+
       
 
       {/* Main Content */}

@@ -7,19 +7,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: ["League Gothic", "serif"], //"League Gothic", serif;
-        secondary: ["Barlow Semi Condensed", "serif"],
-        body: ["Barlow", "serif"],
+        primary: ["Inter", "serif"], //font-family: "Inter", serif
       },
 
       colors: {
         background: "rgba(var(--background))",
         border: "rgba(var(--border))",
-        blue: "rgba(var(--blue))",
+        primary: "rgba(var(--primary))",
         red: "rgba(var(--red))",
         gray: "rgba(var(--gray))",
-
-
       },
 
     },
