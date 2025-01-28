@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../components/NavBar';
 import Thumbnail from '../components/Thumbnail';
 import img from "../assets/img.jpg";
+import DesignCard from '../components/DesignCard';
 
 // Move mock data to a separate file in real application
 const DESIGNS_DATA = [
@@ -49,7 +50,6 @@ const Designs = () => {
   
   return (
     <div className="min-h-screen bg-gray-50">
-      <NavBar />
 
       <FilterBar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
 

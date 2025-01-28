@@ -8,7 +8,7 @@ const NavBar = () => {
         {/* Name Section - Left Aligned */}
         <div className="flex-1 flex justify-start ml-10"> {/* Added flex-1 and justify-start */}
           <div className="font-primary text-primary font-semibold text-3xl textShadow tracking-wide"
-               style={{ textShadow: '3px 3px 5px rgba(240, 240, 240, 0.5)' }}>
+               >
             <a href="/">achira silva</a>
           </div>
         </div>
