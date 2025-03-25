@@ -1,11 +1,11 @@
 import logo from "../assets/logo.svg";
 import LogoPattern from "../components/LogoPattern";
 import Logo from "../assets/Logo";
-import pfp from '../assets/achira.jpeg'
+import pfp from '../assets/achira.jpeg';
 
 const Home = () => {
   return (
-    <div className="flex flex-col justify-between w-full h-screen bg-gray-100 mx-auto max-w-[60%]">
+    <div className="flex flex-col justify-between w-full h-screen bg-gray-100 mx-auto max-w-[60%] ">
       <div className="flex items-center justify-center p-10">
         <div className="flex max-w-44">
           <img src={pfp} alt="achira" className="rounded-full" />

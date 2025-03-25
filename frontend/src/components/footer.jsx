@@ -15,7 +15,7 @@ const footer = () => {
           </a>
         </div> */}
         <div className="flex font-secondary text-gray text-lg tracking-wide">
-          DESIGNED & DEVELOPED BY &nbsp; <b>ACHIRA SILVA</b>
+          DESIGNED & DEVELOPED BY &nbsp; <b> ACHIRA SILVA </b>
         </div>
       </footer>
   )
