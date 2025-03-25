@@ -16,7 +16,7 @@ const NavBar = () => {
         {/* Menu Items - Right Aligned */}
         <div className="flex-1 flex justify-end mr-10"> 
           <div className="flex font-primary font-medium text-primary gap-20 text-xl"> {/* Changed gap to 16 */}
-            <a href="/" className="hover:text-red transition duration-500">
+            <a href="/" className="hover:text-blue transition duration-500">
               home
             </a>
             <a href="/design" className="hover:text-red transition duration-500">

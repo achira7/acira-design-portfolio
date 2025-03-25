@@ -45,22 +45,7 @@ const Home = () => {
       </div>
 
       {/* Footer */}
-      <footer className="flex justify-between items-center p-8">
-        <div className="flex font-primary text-blue gap-10 text-5xl ">
-          <a href="/design" className="hover:text-red transition duration-700">
-            DESIGN
-          </a>
-          <a href="/music" className="hover:text-red transition duration-700">
-            MUSIC
-          </a>
-          <a href="/about" className="hover:text-red transition duration-700">
-            ABOUT
-          </a>
-        </div>
-        <div className="flex font-secondary font-medium text-gray text-xl">
-          DESIGNED & DEVELOPED BY <b>ACHIRA SILVA</b>
-        </div>
-      </footer>
+      
     </div>
   );
 };
