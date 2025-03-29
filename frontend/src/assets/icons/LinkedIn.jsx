@@ -12,7 +12,7 @@ const LinkedIn = () => {
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin hover:text-sky-500 duration-300"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin hover:text-blue-700 duration-500"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M8 11v5" />

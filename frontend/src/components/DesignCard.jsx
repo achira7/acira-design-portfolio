@@ -11,16 +11,17 @@ const DesignCard = ({ title, description, tech, img, behance, dribble }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isImageOpen, setIsImageOpen] = useState(false);
   const [maxHeight, setMaxHeight] = useState(0);
-
   const descriptionRef = useRef(null);
-
+  const contentRef = useRef(null);
   const maxLength = 100;
+
+  const collapsedHeightRef = useRef(0);
 
   useEffect(() => {
     if (descriptionRef.current) {
       setMaxHeight(descriptionRef.current.scrollHeight);
     }
-  }, [isExpanded, description]); 
+  }, [isExpanded, description]);
 
   const toggleDescription = () => {
     setIsExpanded(!isExpanded);
@@ -33,16 +34,16 @@ const DesignCard = ({ title, description, tech, img, behance, dribble }) => {
 
   return (
     <div className="rounded-3xl border border-border md:m-5 px-8 py-6 shadow-lg hover:shadow-xl transition-shadow">
-      <h2 className="text-primary font-primary font-semibold text-xl">
+      <h2 className="text-primary font-primary font-semibold text-xl mb-2">
         {title}
       </h2>
-      <div className="w-20vh my-3">
+      <div className="w-20vh">
         {img && (
           <img
             src={img}
             alt={title}
             title="Click to View Image"
-            className="rounded-xl cursor-pointer"
+            className="rounded-xl cursor-pointer mb-2"
             onClick={() => setIsImageOpen(true)}
             onError={(e) => {
               e.target.style.display = "none";
@@ -51,25 +52,19 @@ const DesignCard = ({ title, description, tech, img, behance, dribble }) => {
         )}
       </div>
 
-      {/* <div 
-        className={`transition-all duration-1000 ease-in-out overflow-hidden ${
-          isExpanded ? "max-h-[1000px]" : "max-h-[100px]"
-        }`}
-      >
-        <p className="text-primary font-primary text-base mb-4 leading-relaxed transition-all duration-300 ease-in-out"> */}
       <div
         style={{ maxHeight: `${maxHeight}px` }}
-        className="transition-all duration-300 ease-in-out overflow-hidden"
+        className="transition-all duration-300 ease-in-out overflow-hidden mb-2"
       >
         <p
           ref={descriptionRef}
-          className="text-primary font-primary text-base mb-4 leading-relaxed"
+          className="text-primary font-primary text-base leading-relaxed"
         >
           {truncatedDescription}
           {description.length > maxLength && (
             <a
               onClick={toggleDescription}
-              className="text-blue-700 hover:text-blue-800 cursor-pointer ml-1 focus:outline-none"
+              className="text-blue-500 hover:text-blue-800 cursor-pointer ml-1 duration-300 focus:outline-none"
             >
               {isExpanded ? "read less" : "read more"}
             </a>
@@ -77,14 +72,14 @@ const DesignCard = ({ title, description, tech, img, behance, dribble }) => {
         </p>
       </div>
 
-      <div className="flex flex-wrap gap-2 mt-1">
+      <div className="flex flex-wrap gap-2">
         {tech.map((techItem, index) => (
           <Tag key={index} text={techItem} />
         ))}
       </div>
 
-      <div className="flex flex-row mt-5 md:gap-5 justify-between bg-yellow-600">
-        <div className="flex md:gap-x-5 justify-center ">
+      <div className="flex flex-row mt-5 md:gap-5 justify-between">
+        <div className="flex md:gap-x-5 justify-center items-center">
           {behance && (
             <a
               className="text-white"
@@ -110,14 +105,21 @@ const DesignCard = ({ title, description, tech, img, behance, dribble }) => {
           )}
         </div>
 
-        <div className="flex justify-cente">
-          <a
-            className="rounded-xl text-primary font-primary cursor-pointer drop-shadow-2xl hover:text-zinc-500 duration-300"
-            title="Take a more closer look"
-            rel="google.com"
-          >
-            <p className="[text-shadow:_0_0px_10px_rgb(0_0_0_/_90%)] md:text-base text-sm"> detailed view </p>
-          </a>
+        <div className="relative group">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full group-hover:blur-[0.5vw] duration-500"></div>
+
+          <div className="relative">
+            <a
+              className="cursor-pointer hover:duration-500"
+              title="Take a more closer look"
+              rel="google.com"
+              href="#"
+            >
+              <p className="text-primary font-primary text-sm border border-blue-400/70 group-hover:border-blue-300 px-4 py-1 rounded-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-700 via-blue-600 to-blue-500 duration-500 group-hover:shadow-xl">
+                detailed view
+              </p>
+            </a>
+          </div>
         </div>
       </div>
 

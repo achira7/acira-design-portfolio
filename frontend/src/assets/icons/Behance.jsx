@@ -12,7 +12,7 @@ const Behance = () => {
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="icon icon-tabler icons-tabler-outline icon-tabler-brand-behance hover:text-sky-800 duration-300"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-brand-behance hover:text-blue-500 duration-500"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M3 18v-12h4.5a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-4.5" />
