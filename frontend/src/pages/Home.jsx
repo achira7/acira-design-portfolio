@@ -1,8 +1,9 @@
 import pfp from "../assets/achira.jpeg";
+import ImageModal from "../components/ImageModal";
 
 const Home = () => {
   return (
-    <div className="flex flex-row md:flex-col justify-between w-screen h-screen bg-gray-100 mx-auto max-w-[60%]">
+    <div className="flex flex-row md:flex-col justify-between w-screen h-screen bg-Gray mx-auto max-w-[60%]">
       <div className="flex flex-col md:flex-row items-center justify-center md:p-10">
         <div className="flex md:max-w-44">
           <img src={pfp} alt="achira" className="rounded-full" />
@@ -21,6 +22,8 @@ const Home = () => {
             PageMaker including versions of Lorem Ipsum.
           </p>
         </div>
+
+        <ImageModal img="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg" title="cocomelon" /> 
       </div>
 
       {/* Main Content */}

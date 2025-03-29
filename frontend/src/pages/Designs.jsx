@@ -1,9 +1,8 @@
 import React from "react";
-import NavBar from "../components/NavBar";
-import Thumbnail from "../components/Thumbnail";
-import img from "../assets/img.jpg";
 import DesignCard from "../components/DesignCard";
-import DevCard from "../components/DevCard";
+
+//icons
+import Search from "../assets/icons/Search";
 
 // Move mock data to a separate file in real application
 
@@ -71,7 +70,37 @@ const Designs = () => {
   const [searchQuery, setSearchQuery] = React.useState("");
 
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-4 mx-auto max-w-[80%]">
+    <div className="min-h-screen bg-gray-50 py-8 px-4 mx-auto max-w-[80%]">
+      {/* <div className="flex flex-row items-center gap-x-3">
+        <Search className="text-white"/>
+        <input type="text" className="rounded-full font-primary text-primary border border-white/50 bg-transparent px-3 py-1" />
+      </div> */}
+
+<div className=" bg-gray-900 flex items-center justify-center">
+        <div className="flex flex-row items-center gap-x-3 relative py-3">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="search designs"
+            className="w-full rounded-full font-primary text-white border-2 border-border bg-transparent px-6 py-4 focus:outline-none focus:border-white transition-colors"
+          />
+          <div className="absolute right-3">
+            <div className="relative group z-10">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full group-hover:blur-[0.55vw] duration-500"></div>
+              <div className="relative">
+                <button
+                  type="submit"
+                  className="border border-blue-400/70 group-hover:border-blue-300 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-700 via-blue-600 to-blue-500 text-white p-2 rounded-full duration-500 group-hover:shadow-xl"
+                >
+                  <Search size={20} />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {DESIGNS_DATA.map((design) => (
           <DesignCard

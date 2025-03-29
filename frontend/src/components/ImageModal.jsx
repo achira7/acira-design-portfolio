@@ -1,50 +1,55 @@
 // ImageModal.jsx
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Close from "../assets/icons/Close";
 
 const ImageModal = ({ img, title, onClose }) => {
-  // Prevent background scrolling when modal is open
+  const [isClosing, setIsClosing] = useState(false);
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => (document.body.style.overflow = "unset");
   }, []);
 
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => onClose(), 300); // Match transition duration
+  };
+
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      onClick={onClose}
+      className={`fixed inset-0 z-50 flex items-center justify-center p-4 
+        transition-all duration-300 ${
+          isClosing ? 'opacity-0' : 'opacity-100'
+        }`}
+      onClick={handleClose}
     >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black opacity-75"></div>
+      {/* Backdrop */}
+      <div className={`absolute inset-0 bg-background/30 backdrop-blur-3xl 
+        transition-opacity duration-300 ${
+          isClosing ? 'opacity-0' : 'opacity-75'
+        }`}
+      />
       
-      {/* Image container */}
-      <div className="relative z-50 max-w-full max-h-full">
+      {/* Content */}
+      <div className={`relative z-50 max-w-full max-h-full 
+        transition-transform duration-300 ${
+          isClosing ? 'scale-95' : 'scale-100'
+        }`}
+      >
         <img
           src={img}
           alt={title}
           className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
-          onClick={(e) => e.stopPropagation()} // Prevent click propagation to overlay
+          onClick={(e) => e.stopPropagation()}
         />
         
-        {/* Close button */}
         <button
-          className="absolute top-2 right-2 p-2 text-white hover:text-gray-300 transition-colors"
-          onClick={onClose}
+          className="absolute top-2 right-2 p-2 text-white hover:text-gray-300 
+            hover:rotate-180 transition-colors duration-200"
+          onClick={handleClose}
           aria-label="Close image modal"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
+          <Close />
         </button>
       </div>
     </div>

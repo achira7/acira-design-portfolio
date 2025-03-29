@@ -2,10 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 
 import Tag from "./Tag";
 import ImageOverlay from "./ImageOverlay.jsx";
+import ImageModal from "./ImageModal.jsx";
 
 //icons
 import Behance from "../assets/icons/Behance.jsx";
 import Dribble from "../assets/icons/Dribble.jsx";
+import Expand from "../assets/icons/Expand.jsx";
 
 const DesignCard = ({ title, description, tech, img, behance, dribble }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -37,18 +39,22 @@ const DesignCard = ({ title, description, tech, img, behance, dribble }) => {
       <h2 className="text-primary font-primary font-semibold text-xl mb-2">
         {title}
       </h2>
-      <div className="w-20vh">
+      <div className="flex w-20vh items-center justify-center group ">
+        <p className="absolute z-10 text-primary text-base opacity-0 group-hover:opacity-100  duration-300"><Expand /></p>
         {img && (
-          <img
-            src={img}
-            alt={title}
-            title="Click to View Image"
-            className="rounded-xl cursor-pointer mb-2"
-            onClick={() => setIsImageOpen(true)}
-            onError={(e) => {
-              e.target.style.display = "none";
-            }}
-          />
+         <div className="relative bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-950 via-zinc-900 to-zinc-800 rounded-xl cursor-pointer mb-2  ">
+         <img
+           src={img}
+           alt={title}
+           title="Click to View Image"
+           className="rounded-xl w-full h-full object-cover group-hover:opacity-35 duration-300"
+           onClick={() => setIsImageOpen(true)}
+           onError={(e) => {
+             e.target.style.display = "none";
+           }}
+         />
+       </div>
+       
         )}
       </div>
 
@@ -105,8 +111,8 @@ const DesignCard = ({ title, description, tech, img, behance, dribble }) => {
           )}
         </div>
 
-        <div className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full group-hover:blur-[0.5vw] duration-500"></div>
+        <div className="relative group z-10">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full group-hover:blur-[0.55vw] duration-500"></div>
 
           <div className="relative">
             <a
@@ -124,10 +130,12 @@ const DesignCard = ({ title, description, tech, img, behance, dribble }) => {
       </div>
 
       {isImageOpen && (
-        <ImageOverlay
+        <ImageModal
           img={img}
           projectName={title}
+          title={title}
           setIsImageOpen={setIsImageOpen}
+          onClose={() => setIsImageOpen(false)}
         />
       )}
     </div>
