@@ -14,7 +14,7 @@ export default {
         background: "rgba(var(--background))",
         border: "rgba(var(--border))",
         primary: "rgba(var(--primary))",
-        red: "rgba(var(--red))",
+        Red: "rgba(var(--red))",
         gray: "rgba(var(--gray))",
         Blue: "rgba(var(--blue))",
       },

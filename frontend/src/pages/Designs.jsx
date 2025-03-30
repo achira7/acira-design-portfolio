@@ -3,6 +3,7 @@ import DesignCard from "../components/DesignCard";
 
 //icons
 import Search from "../assets/icons/Search";
+import Filter from "../assets/icons/Filter";
 
 // Move mock data to a separate file in real application
 
@@ -76,8 +77,8 @@ const Designs = () => {
         <input type="text" className="rounded-full font-primary text-primary border border-white/50 bg-transparent px-3 py-1" />
       </div> */}
 
-<div className=" bg-gray-900 flex items-center justify-center">
-        <div className="flex flex-row items-center gap-x-3 relative py-3">
+      <div className=" bg-gray-900 flex items-center justify-center gap-x-10">
+        <div className="flex flex-row w-[50%] items-center gap-x-3 relative py-3">
           <input
             type="text"
             value={searchQuery}
@@ -99,6 +100,29 @@ const Designs = () => {
             </div>
           </div>
         </div>
+
+        <div className="flex">
+          <button className="text-2xl text-blue-600 rounded-full p-3 hover:text-white hover:bg-blue-600 duration-500" title="add filters">
+            <Filter size={20} />
+          </button>
+          
+        </div>
+
+        {/* <div className="text-white">
+        <div className="relative group z-10">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full group-hover:blur-[0.55vw] duration-500"></div>
+              <div className="relative">
+          <button
+            type="submit"
+            title="filter"
+            className="border border-blue-400/70 group-hover:border-blue-300 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-700 via-blue-600 to-blue-500 text-white p-2 rounded-full duration-500 group-hover:shadow-xl"
+          >
+            <Filter size={20} />
+          </button>
+          </div>
+            </div>
+      
+        </div> */}
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">

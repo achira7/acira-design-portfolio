@@ -118,7 +118,7 @@ const DesignCard = ({ title, description, tech, img, behance, dribble }) => {
             <a
               className="cursor-pointer hover:duration-500"
               title="Take a more closer look"
-              rel="google.com"
+              rel="www.google.com"
               href="#"
             >
               <p className="text-primary font-primary text-sm border border-blue-400/70 group-hover:border-blue-300 px-4 py-1 rounded-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-700 via-blue-600 to-blue-500 duration-500 group-hover:shadow-xl">
@@ -136,6 +136,7 @@ const DesignCard = ({ title, description, tech, img, behance, dribble }) => {
           title={title}
           setIsImageOpen={setIsImageOpen}
           onClose={() => setIsImageOpen(false)}
+          link={"#"}
         />
       )}
     </div>
