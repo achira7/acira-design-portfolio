@@ -72,13 +72,9 @@ const Designs = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 mx-auto max-w-[80%]">
-      {/* <div className="flex flex-row items-center gap-x-3">
-        <Search className="text-white"/>
-        <input type="text" className="rounded-full font-primary text-primary border border-white/50 bg-transparent px-3 py-1" />
-      </div> */}
 
       <div className=" bg-gray-900 flex items-center justify-center gap-x-10">
-        <div className="flex flex-row w-[50%] items-center gap-x-3 relative py-3">
+        <div className="flex flex-row w-[45%] items-center gap-x-3 relative py-3">
           <input
             type="text"
             value={searchQuery}
@@ -102,7 +98,7 @@ const Designs = () => {
         </div>
 
         <div className="flex">
-          <button className="text-2xl text-blue-600 rounded-full p-3 hover:text-white hover:bg-blue-600 duration-500" title="add filters">
+          <button className="text-2xl text-blue-600 rounded-full p-2 hover:text-white hover:bg-blue-600 duration-500" title="add filters">
             <Filter size={20} />
           </button>
           
@@ -121,8 +117,8 @@ const Designs = () => {
           </button>
           </div>
             </div>
-      
         </div> */}
+
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
