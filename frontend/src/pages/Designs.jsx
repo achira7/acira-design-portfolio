@@ -112,7 +112,7 @@ const Designs = () => {
                   <option value="all">All Categories</option>
                   <option value="saab">Logo Design</option>
                   <option value="mercedes">UI/UX</option>
-                  <option value="audi">gay</option>
+                  <option value="audi">Print</option>
                 </select>
               </div>
             </div>

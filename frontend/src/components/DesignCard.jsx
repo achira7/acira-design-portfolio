@@ -91,7 +91,7 @@ const DesignCard = ({ title, description, tech, img, behance, dribble, link }) =
       </div>
 
       <div className="flex flex-row mt-5  justify-between">
-        <div className="flex md:gap-x-5 justify-center items-center bg-purple-300">
+        <div className="flex md:gap-x-5 justify-center items-center">
           {behance && (
             <a
               className="text-white"
