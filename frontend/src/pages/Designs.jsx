@@ -1,11 +1,13 @@
 import React from "react";
+import { useRef, useState } from "react";
 import DesignCard from "../components/DesignCard";
+
+import Select from "react-dropdown-select";
 
 //icons
 import Search from "../assets/icons/Search";
 import Filter from "../assets/icons/Filter";
-
-// Move mock data to a separate file in real application
+import ArrowLeft from "../assets/icons/ArrowLeft";
 
 const imgLink =
   "https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1xw:0.74975xh;center,top&resize=1200:*";
@@ -68,19 +70,62 @@ const DESIGNS_DATA = [
 ];
 
 const Designs = () => {
+  const selectRef = useRef(null);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState("All");
+
+  const options = [
+    {
+      value: 1,
+      label: "All",
+    },
+    {
+      value: 2,
+      label: "Graphic Design",
+    },
+    {
+      value: 3,
+      label: "UI/UX",
+    },
+    {
+      value: 4,
+      label: "Print Design",
+    },
+  ];
+
   const [searchQuery, setSearchQuery] = React.useState("");
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4 mx-auto max-w-[80%]">
+    <div className="min-h-screen bg-gray-100 py-8 px-4 mx-auto max-w-[80%]">
+      <div className="flex bg-gray-900 items-center justify-center gap-x-8">
+        <div className="flex flex-row rounded-full items-center justify-center gap-x-3 relative">
+          <div>
+            <div className="flex " title="Select Design Category">
+              <select className="flex text-center text-base items-center justify-center font-primary bg-zinc-700 hover:bg-zinc-800 duration-500 text-white py-4 px-6 border focus:border-white/70 appearance-none border-border rounded-full">
+                <option value="all" >All Categories</option>
+                <option value="saab" >Logo Design</option>
+                <option value="mercedes" >UI/UX</option>
+                <option value="audi">gay</option>
 
-      <div className=" bg-gray-900 flex items-center justify-center gap-x-10">
+                {/* <div className="rotate-[270] text-white text-3xl">
+                <ArrowLeft />
+              </div> */}
+
+              </select>
+              
+            </div>
+          </div>
+        </div>
+
         <div className="flex flex-row w-[45%] items-center gap-x-3 relative py-3">
           <input
             type="text"
+            title="Search Designs"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="search designs"
-            className="w-full rounded-full font-primary text-white border-2 border-border bg-transparent px-6 py-4 focus:outline-none focus:border-white transition-colors"
+            className="w-full rounded-full bg-zinc-800/60 font-primary text-white border-2 border-border  px-6 py-4 focus:outline-none focus:border-white/70 transition-colors duration-500"
           />
           <div className="absolute right-3">
             <div className="relative group z-10">
@@ -97,12 +142,17 @@ const Designs = () => {
           </div>
         </div>
 
-        <div className="flex">
-          <button className="text-2xl text-blue-600 rounded-full p-2 hover:text-white hover:bg-blue-600 duration-500" title="add filters">
+        
+
+        {/* FILTER BUTTON */}
+        {/* <div className="flex">
+          <button
+            className="text-2xl text-blue-600 rounded-full p-2 hover:text-white hover:bg-blue-600 duration-500"
+            title="add filters"
+          >
             <Filter size={20} />
           </button>
-          
-        </div>
+        </div> */}
 
         {/* <div className="text-white">
         <div className="relative group z-10">
@@ -118,8 +168,12 @@ const Designs = () => {
           </div>
             </div>
         </div> */}
+        
 
       </div>
+
+      <hr className="my-10 h-[1px] border-t-0 bg-border/50" />
+
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {DESIGNS_DATA.map((design) => (

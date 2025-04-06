@@ -20,7 +20,7 @@ const NavBar = () => {
   }, [isHamburgerOpen]);
 
   return (
-    <div className="flex fixed border-b border-white/60 mx-auto w-full z-50">
+    <div className="flex fixed border-b border-white/60 mx-auto w-full z-50 bg-zinc-800/40">
       {/* Desktop Navbar */}
       <div className="hidden md:flex justify-between items-center w-full h-full px-4 bg-background/30 backdrop-blur-xl">
         {/* Name Section - Left Aligned */}
@@ -35,7 +35,7 @@ const NavBar = () => {
         {/* Menu Items - Right Aligned */}
         <div className="flex-1 flex justify-end mr-20">
           <div className="flex font-primary font-medium text-primary gap-20 text-xl ">
-            <a href="/" className="hover:text-blue transition duration-500">
+            <a href="/" className="hover:text-blue-400 transition duration-500">
               home
             </a>
             <a

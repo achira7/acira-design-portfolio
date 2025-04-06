@@ -35,26 +35,38 @@ const DesignCard = ({ title, description, tech, img, behance, dribble }) => {
       : description;
 
   return (
-    <div className="rounded-3xl border border-border md:m-5 px-8 py-6 shadow-lg hover:shadow-xl transition-shadow">
+    <div className="rounded-3xl border border-border md:m-5 px-8 py-5 shadow-xl transition-shadow bg-zinc-800/60">
       <h2 className="text-primary font-primary font-semibold text-xl mb-2">
         {title}
       </h2>
+
+
+      {/* <div className="flex mb-2">
+        <a href="">
+        <p className=" text-red-400 hover:text-red-600 duration-500 text-sm ">Graphic Design</p>
+        </a>
+      </div> */}
+
       <div className="flex w-20vh items-center justify-center group ">
-        <p className="absolute z-10 text-primary text-base opacity-0 group-hover:opacity-100  duration-300"><Expand /></p>
+      {img && (
+        <p className="absolute z-10 text-primary text-base opacity-0 group-hover:opacity-100  duration-300">
+          <Expand />
+        </p>
+      )}
+
         {img && (
-         <div className="relative bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-950 via-zinc-900 to-zinc-800 rounded-xl cursor-pointer mb-2  ">
-         <img
-           src={img}
-           alt={title}
-           title="Click to View Image"
-           className="rounded-xl w-full h-full object-cover group-hover:opacity-35 duration-300"
-           onClick={() => setIsImageOpen(true)}
-           onError={(e) => {
-             e.target.style.display = "none";
-           }}
-         />
-       </div>
-       
+          <div className="relative bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-950 via-zinc-900 to-zinc-800 rounded-xl cursor-pointer mb-2  ">
+            <img
+              src={img}
+              alt={title}
+              title="Click to View Image"
+              className="rounded-xl w-full h-full object-cover group-hover:opacity-35 duration-500"
+              onClick={() => setIsImageOpen(true)}
+              onError={(e) => {
+                e.target.style.display = "none";
+              }}
+            />
+          </div>
         )}
       </div>
 
