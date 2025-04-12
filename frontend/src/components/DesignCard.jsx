@@ -8,9 +8,9 @@ import ImageModal from "./ImageModal.jsx";
 import Behance from "../assets/icons/Behance.jsx";
 import Dribble from "../assets/icons/Dribble.jsx";
 import Expand from "../assets/icons/Expand.jsx";
-import ExternalLink from "../assets/icons/ExternalLink.jsx";
+import ExternalLinkIcon from "../assets/icons/ExternalLink.jsx";
 
-const DesignCard = ({ title, description, tech, img, behance, dribble, link }) => {
+const DesignCard = ({ title, description, tech, img, behance, dribble, link, category }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isImageOpen, setIsImageOpen] = useState(false);
   const [maxHeight, setMaxHeight] = useState(0);
@@ -39,6 +39,10 @@ const DesignCard = ({ title, description, tech, img, behance, dribble, link }) =
     <div className="rounded-3xl border border-border md:m-5 px-8 py-6 shadow-xl transition-shadow bg-zinc-900">
       <h2 className="text-primary font-primary font-semibold text-xl mb-2">
         {title}
+      </h2>
+
+      <h2 className="text-primary font-primary text-sm mb-2">
+        {category}
       </h2>
 
       <div className="flex w-20vh items-center justify-center group ">
@@ -125,7 +129,7 @@ const DesignCard = ({ title, description, tech, img, behance, dribble, link }) =
               rel="noopener noreferrer"
             >
               {" "}
-              <ExternalLink className="text-3xl" />{" "}
+              <ExternalLinkIcon className="text-3xl" />{" "}
             </a>
           )}
         </div>

@@ -2,7 +2,6 @@ import React from "react";
 import { useRef, useState } from "react";
 import DesignCard from "../components/DesignCard";
 
-import Select from "react-dropdown-select";
 
 //icons
 import Search from "../assets/icons/Search";
@@ -26,6 +25,7 @@ const DESIGNS_DATA = [
     description:
       "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ind",
     tech: ["Photoshop", "Illustrator"],
+    category: "logo",
     img: imgLink,
     behance: behanceLink,
     dribble: dribbleLink,
@@ -36,6 +36,7 @@ const DESIGNS_DATA = [
     title: "Be Yourself and Shine 2 Rise and Shine part 5 - 876",
     description: "A compelling description",
     tech: ["Figma", "Photoshop", "Illustrator"],
+    category: "logo",
     behance: behanceLink,
   },
   {
@@ -44,6 +45,7 @@ const DESIGNS_DATA = [
     description:
       "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     tech: ["Photoshop", "Illustrator"],
+    category: "uiux",
     img: imgLink,
     behance: behanceLink,
   },
@@ -53,6 +55,7 @@ const DESIGNS_DATA = [
     description:
       "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text everis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
     tech: ["InDesign"],
+    category: "print",
     dribble: dribbleLink,
     link: ExternalLink
   },
@@ -62,6 +65,7 @@ const DESIGNS_DATA = [
     description:
       "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
     tech: ["TailwindCSS", "WordPress"],
+    category: "logo",
   },
   {
     id: 6,
@@ -69,6 +73,7 @@ const DESIGNS_DATA = [
     description:
       "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     tech: ["JavaScript", "NodeJS", "JS", "X", "|", "TailwindCSS"],
+    category: "uiux",
     img: imgLink,
     link: ExternalLink
   },
@@ -79,6 +84,13 @@ const Designs = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("All");
+
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+const filteredDesigns = selectedCategory
+  ? DESIGNS_DATA.filter((item) => item.category === selectedCategory)
+  : DESIGNS_DATA;
+
 
   const options = [
     {
@@ -110,9 +122,9 @@ const Designs = () => {
               <div className="flex " title="Select Design Category">
                 <select className="flex text-center text-base items-center justify-center font-primary bg-zinc-700 hover:bg-zinc-800 duration-500 text-white py-4 px-6 border focus:border-white/70 appearance-none border-border rounded-full">
                   <option value="all">All Categories</option>
-                  <option value="saab">Logo Design</option>
-                  <option value="mercedes">UI/UX</option>
-                  <option value="audi">Print</option>
+                  <option value="logo">Logo Design</option>
+                  <option value="uiux">UI/UX</option>
+                  <option value="print">Print</option>
                 </select>
               </div>
             </div>
@@ -160,6 +172,7 @@ const Designs = () => {
               behance={design.behance}
               dribble={design.dribble}
               link={design.link}
+              category={design.category}
             />
           ))}
         </div>
