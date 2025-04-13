@@ -47,7 +47,7 @@ const DesignCard = ({ title, description, tech, img, behance, dribble, link, cat
 
       <div className="flex w-20vh items-center justify-center group ">
         {img && (
-          <p className="absolute z-10 text-primary text-base opacity-0 group-hover:opacity-100  duration-300">
+          <p className="absolute z-10 text-primary text-base opacity-0 group-hover:opacity-100  duration-300 cursor-pointer" onClick={() => setIsImageOpen(true)}>
             <Expand />
           </p>
         )}
