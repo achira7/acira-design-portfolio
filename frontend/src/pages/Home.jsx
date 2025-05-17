@@ -10,7 +10,7 @@ const Home = () => {
         </div>
         <div className="flex flex-col md:pl-10">
           <h1 className="font-primary text-primary text-xl md:text-3xl">Hey there</h1>
-          <p className="font-primary text-primary text-base/8 md:text-xl/8">
+          <p className="font-primary text-primary text-base md:text-base ">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type

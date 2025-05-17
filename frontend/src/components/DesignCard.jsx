@@ -74,7 +74,7 @@ const DesignCard = ({ title, description, tech, img, behance, dribble, link, cat
       >
         <p
           ref={descriptionRef}
-          className="text-primary font-primary text-base leading-relaxed"
+          className=" font-primary text-base leading-relaxed text-justify font-normal text-zinc-300"
         >
           {truncatedDescription}
           {description.length > maxLength && (

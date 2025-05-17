@@ -33,13 +33,13 @@ const Test = () => {
           </div>
       </div>
 
-      {/* <div className="flex">
+       <div className="flex">
          <ArrowLeft /> 
       </div>
       <h1 className="flex my-5 text-2xl font-semibold">{title}</h1>
       <div className="flex w-[80%]">
         <Carousel images={img} />
-      </div> */}
+      </div> 
 
       <div className="flex w-full items-center justify-center mt-10 mb-4">
         <hr className="h-[1px] w-[60%] border-t-0 bg-border/50" />

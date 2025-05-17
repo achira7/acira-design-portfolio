@@ -20,7 +20,7 @@ const NavBar = () => {
   }, [isHamburgerOpen]);
 
   return (
-    <div className="flex fixed border-b border-white/60 mx-auto w-full z-50 bg-zinc-800/40">
+    <div className="flex fixed border-b border-white/30 mx-auto w-full z-50 bg-zinc-800/40">
       {/* Desktop Navbar */}
       <div className="hidden md:flex justify-between items-center w-full h-full px-4 bg-background/30 backdrop-blur-xl">
         {/* Name Section - Left Aligned */}

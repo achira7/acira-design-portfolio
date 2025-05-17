@@ -84,14 +84,14 @@ const Carousel = ({ images = [] }) => {
             
           </div>
 
-          {/* <span
+          <span
             href=""
             onClick={() => handleImageClick(currentIndex)}
             className="cursor-zoom-in ... z-50"
           >
             {" "}
             Click Me
-          </span> */}
+          </span>
 
           {modalOpen && (
             <CarouselModal
