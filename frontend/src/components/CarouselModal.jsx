@@ -62,7 +62,7 @@ const CarouselModal = ({ images = [], currentIndex = 0, onClose }) => {
                   e.stopPropagation();
                   nextSlide();
                 }}
-                className="group bg-black/50 p-2 rounded-full hover:bg-black/80 transition-all duration-300 md:p-3"
+                className="group bg-black/40 p-2 rounded-full hover:bg-black/70 transition-all duration-300 md:p-3"
                 title="Previous Image"
               >
                 <ArrowLeft
@@ -76,7 +76,7 @@ const CarouselModal = ({ images = [], currentIndex = 0, onClose }) => {
                   e.stopPropagation();
                   nextSlide();
                 }}
-                className="group bg-black/50 p-2 rounded-full hover:bg-black/80 transition-all duration-300 md:p-3 rotate-180"
+                className="group bg-black/40 p-2 rounded-full hover:bg-black/70 transition-all duration-300 md:p-3 rotate-180"
                 title="Next Image"
               >
                 <ArrowLeft

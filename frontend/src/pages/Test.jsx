@@ -7,17 +7,26 @@ import CarouselModal from "../components/CarouselModal";
 import ArrowLeft from "../assets/icons/ArrowLeft";
 import CarouselIcon from "../assets/icons/CarouselIcon";
 
+import img1 from '../assets/images/1.webp';
+import img2 from '../assets/images/2.webp';
+import img3 from '../assets/images/3.webp';
+import img4 from '../assets/images/4.webp';
+
 const title = "Be Yourseldf Design";
 
 const tech = ["Figma", "InDesign"];
 
+// const img = [
+//   "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8MTkyMHgxMDgwfGVufDB8fDB8fHww",
+//   "https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fDE5MjB4MTA4MHxlbnwwfHwwfHx8MA%3D%3D",
+//   "https://images.unsplash.com/photo-1487252015168-776961549aca?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fDE5MjB4MTA4MCUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D",
+//   "https://plus.unsplash.com/premium_photo-1723983555804-4f76968a2a2d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8MTkyMHgxMDgwJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww",
+//   "https://images.unsplash.com/photo-1478001517127-fccc92f54906?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fDE5MjB4MTA4MCUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D",
+// ];
+
 const img = [
-  "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8MTkyMHgxMDgwfGVufDB8fDB8fHww",
-  "https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fDE5MjB4MTA4MHxlbnwwfHwwfHx8MA%3D%3D",
-  "https://images.unsplash.com/photo-1487252015168-776961549aca?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fDE5MjB4MTA4MCUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1723983555804-4f76968a2a2d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8MTkyMHgxMDgwJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww",
-  "https://images.unsplash.com/photo-1478001517127-fccc92f54906?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fDE5MjB4MTA4MCUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D",
-];
+  img1, img2, img3, img4
+]
 
 const Test = () => {
   const [isImageOpen, setIsImageOpen] = useState(false);
@@ -26,7 +35,8 @@ const Test = () => {
     <div className="flex flex-col text-primary mt-2 font-primary items-center justify-center">
       {/* <div className="flex flex-row justify-center items-center gap-x-64 py-7 bg-teal-500"> */}
       <div className="relative flex flex-row justify-between items-center w-[80%] mx-auto pt-10 pb-8">
-        {/* Left button */}
+
+
         <div className="flex">
           <button
             className="flex-1 mx-5 rounded-full hover:bg-zinc-400/50 duration-300 p-1 group "
@@ -36,7 +46,6 @@ const Test = () => {
           </button>
         </div>
 
-        {/* Center Title - absolutely centered */}
         <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center">
           <h1 className="text-2xl font-semibold cursor-default text-center">
             {title}
@@ -48,7 +57,6 @@ const Test = () => {
           </div> */}
         </div>
 
-        {/* Right button */}
         <div className="flex">
           <button
             className="flex py-2 px-5 gap-x-3 justify-center items-center rounded-full hover:bg-zinc-400/50 duration-300 group"
@@ -83,7 +91,7 @@ const Test = () => {
 
         <div className="flex ">
           <p className="">
-            <img src={img[2]} alt="image" className="rounded-xl" />
+            <img src={img[1]} alt="image" className="rounded-xl" />
             {/* Passive noise cancellation (PNC), also known as passive noise
             isolation, reduces ambient noise by using physical design features
             like earcups, materials, and ear tip fit to block sound from
@@ -113,7 +121,7 @@ const Test = () => {
             technology to actively cancel out noise, PNC relies on a physical
             barrier to minimize unwanted sounds.
           </p> */}
-          <img src={img[3]} alt="image" className="rounded-xl" />
+          <img src={img[2]} alt="image" className="rounded-xl" />
         </div>
       </div>
 
