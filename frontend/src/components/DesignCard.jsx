@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 import Tag from "./Tag";
 import ImageOverlay from "./ImageOverlay.jsx";
 import ImageModal from "./ImageModal.jsx";
+import Carousel from "./Carousel.jsx";
+import CarouselModal from "./CarouselModal.jsx";
 
 //icons
 import Behance from "../assets/icons/Behance.jsx";
@@ -18,7 +20,14 @@ const DesignCard = ({ title, description, tech, img, behance, dribble, link, cat
   const contentRef = useRef(null);
   const maxLength = 100;
 
+  const [modalOpen, setModalOpen] = useState(false);
+
   const collapsedHeightRef = useRef(0);
+
+  const handleImageClick = (index) => {
+    setSelectedIndex(index);
+    setModalOpen(true);
+  };
 
   useEffect(() => {
     if (descriptionRef.current) {
@@ -37,13 +46,13 @@ const DesignCard = ({ title, description, tech, img, behance, dribble, link, cat
 
   return (
     <div className="rounded-3xl border border-border md:m-5 px-8 py-6 shadow-xl transition-shadow bg-zinc-900">
-      <h2 className="text-primary font-primary font-semibold text-xl mb-2">
+      <h2 className="text-primary font-primary font-semibold text-xl mb-4">
         {title}
       </h2>
 
-      <h2 className="text-primary font-primary text-sm mb-2">
+      {/* <h2 className="text-primary font-primary text-sm mb-2">
         {category}
-      </h2>
+      </h2> */}
 
       <div className="flex w-20vh items-center justify-center group ">
         {img && (
@@ -74,7 +83,7 @@ const DesignCard = ({ title, description, tech, img, behance, dribble, link, cat
       >
         <p
           ref={descriptionRef}
-          className=" font-primary text-base leading-relaxed text-justify font-normal text-zinc-300"
+          className=" font-primary text-sm leading-relaxed text-justify font-normal text-zinc-300"
         >
           {truncatedDescription}
           {description.length > maxLength && (
@@ -153,14 +162,22 @@ const DesignCard = ({ title, description, tech, img, behance, dribble, link, cat
       </div>
 
       {isImageOpen && (
-        <ImageModal
-          img={img}
-          projectName={title}
-          title={title}
-          setIsImageOpen={setIsImageOpen}
-          onClose={() => setIsImageOpen(false)}
-          link={"#"}
-        />
+        // <ImageModal
+        //   img={img}
+        //   projectName={title}
+        //   title={title}
+        //   setIsImageOpen={setIsImageOpen}
+        //   onClose={() => setIsImageOpen(false)}
+        //   link={"#"}
+        // />
+                //  <div className="flex w-[80%] absolute">
+                //   <Carousel images={img} />
+                // </div> 
+
+      <CarouselModal
+        images={img}
+        onClose={() => setIsImageOpen(false)}
+      />
       )}
     </div>
   );

@@ -1,6 +1,30 @@
+// import React from "react";
+
+// const ArrowLeft = () => {
+//   return (
+//     <svg
+//       xmlns="http://www.w3.org/2000/svg"
+//       width="1rem"
+//       height="1rem"
+//       viewBox="0 0 24 24"
+//       fill="none"
+//       stroke="currentColor"
+//       strokeWidth={2}
+//       strokeLinecap="round"
+//       strokeLinejoin="round"
+//       className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"
+//     >
+//       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+//       <path d="M15 6l-6 6l6 6" />
+//     </svg>
+//   );
+// };
+
+// export default ArrowLeft;
+
 import React from "react";
 
-const ArrowLeft = () => {
+const ArrowLeft = ({ className = "", strokeWidth = 2 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,10 +33,10 @@ const ArrowLeft = () => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth={2}
+      strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"
+      className={`icon icon-tabler icon-tabler-chevron-left ${className}`}
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M15 6l-6 6l6 6" />

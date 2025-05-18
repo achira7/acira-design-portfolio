@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ArrowLeft from "../assets/icons/ArrowLeft";
+import Expand from "../assets/icons/Expand";
 
 import CarouselModal from "./CarouselModal";
 
@@ -27,7 +28,7 @@ const Carousel = ({ images = [] }) => {
     (currentIndex + offset + images.length) % images.length;
 
   return (
-    <div className="relative w-full flex items-center justify-center">
+    <div className="relative w-full flex items-center justify-center ">
       {images.length > 0 ? (
         <div className="relative flex items-center justify-center w-full md:w-[70%] lg:w-[50%]">
           {/* Left Preview*/}
@@ -90,7 +91,7 @@ const Carousel = ({ images = [] }) => {
             className="cursor-zoom-in ... z-50"
           >
             {" "}
-            Click Me
+            <Expand />
           </span>
 
           {modalOpen && (

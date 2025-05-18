@@ -55,33 +55,45 @@ const CarouselModal = ({ images = [], currentIndex = 0, onClose }) => {
           />
 
           {/* Navigation Controls */}
-          <div className="absolute inset-0 flex items-center justify-between px-4 z-20">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                prevSlide();
-              }}
-              className="bg-black/50 p-2 rounded-full hover:bg-black/80 transition-all duration-300 md:p-3"
-            >
-              <ArrowLeft className="h-6 w-6 md:h-8 md:w-8 text-white" />
-            </button>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                nextSlide();
-              }}
-              className="bg-black/50 p-2 rounded-full hover:bg-black/80 transition-all duration-300 md:p-3 rotate-180"
-            >
-              <ArrowLeft className="h-6 w-6 md:h-8 md:w-8 text-white" />
-            </button>
-          </div>
+          {images.length != 1 && (
+            <div className="absolute inset-0 flex items-center justify-between px-4 z-20">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextSlide();
+                }}
+                className="group bg-black/50 p-2 rounded-full hover:bg-black/80 transition-all duration-300 md:p-3"
+                title="Previous Image"
+              >
+                <ArrowLeft
+                  className="h-6 w-6 text-zinc-200 transition-all duration-300 group-hover:scale-125 group-hover:text-white"
+                  strokeWidth={2.5}
+                />
+              </button>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextSlide();
+                }}
+                className="group bg-black/50 p-2 rounded-full hover:bg-black/80 transition-all duration-300 md:p-3 rotate-180"
+                title="Next Image"
+              >
+                <ArrowLeft
+                  className="h-6 w-6 text-zinc-200 transition-all duration-300 group-hover:scale-125 group-hover:text-white"
+                  strokeWidth={2.5}
+                />
+              </button>
+            </div>
+          )}
 
           {/* Close Button */}
           <button
             onClick={handleClose}
-            className="absolute top-2 right-2 p-2 text-white text-4xl transition-all duration-500 hover:text-red-600 hover:rotate-90 z-30"
+            className="absolute top-2 right-2 p-2 text-white text-4xl transition-all duration-500 hover:text-red-600 hover:rotate-90 z-30 drop-shadow-lg"
+            title="Close Full Screen"
           >
-            <Close className="shadow-lg transition-all duration-300 inline-block" />
+            <Close className="shadow-lg transition-all duration-300  inline-block" />
           </button>
         </div>
       </div>
