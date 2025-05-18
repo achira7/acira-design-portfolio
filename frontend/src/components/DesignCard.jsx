@@ -162,18 +162,6 @@ const DesignCard = ({ title, description, tech, img, behance, dribble, link, cat
       </div>
 
       {isImageOpen && (
-        // <ImageModal
-        //   img={img}
-        //   projectName={title}
-        //   title={title}
-        //   setIsImageOpen={setIsImageOpen}
-        //   onClose={() => setIsImageOpen(false)}
-        //   link={"#"}
-        // />
-                //  <div className="flex w-[80%] absolute">
-                //   <Carousel images={img} />
-                // </div> 
-
       <CarouselModal
         images={img}
         onClose={() => setIsImageOpen(false)}

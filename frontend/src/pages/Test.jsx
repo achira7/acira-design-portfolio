@@ -1,7 +1,8 @@
-import React from "react";
+import { React, useState } from "react";
 
 import Carousel from "../components/Carousel";
 import Tag from "../components/Tag";
+import CarouselModal from "../components/CarouselModal";
 
 import ArrowLeft from "../assets/icons/ArrowLeft";
 import CarouselIcon from "../assets/icons/CarouselIcon";
@@ -19,54 +20,55 @@ const img = [
 ];
 
 const Test = () => {
+  const [isImageOpen, setIsImageOpen] = useState(false);
+
   return (
     <div className="flex flex-col text-primary mt-2 font-primary items-center justify-center">
-
-      <div className="flex flex-row justify-center items-center gap-x-52 py-7">
-        <div className="flex mx-5">
-          <ArrowLeft className="h-8 w-8" />
+      {/* <div className="flex flex-row justify-center items-center gap-x-64 py-7 bg-teal-500"> */}
+      <div className="relative flex flex-row justify-between items-center w-[80%] mx-auto pt-10 pb-8">
+        {/* Left button */}
+        <div className="flex">
+          <button
+            className="flex-1 mx-5 rounded-full hover:bg-zinc-400/50 duration-300 p-1 group "
+            title="Go Back"
+          >
+            <ArrowLeft className="h-8 w-8 text-text-zinc-400 group-hover:scale-110 group-hover:text-white duration-300 mr-1" />
+          </button>
         </div>
 
-        <div className="flex flex-col items-center justify-center">
-
-          <h1 className="flex text-2xl font-semibold cursor-default">
+        {/* Center Title - absolutely centered */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center">
+          <h1 className="text-2xl font-semibold cursor-default text-center">
             {title}
           </h1>
+          <h1 className="text-base font-primary text-zinc-400 cursor-pointer mt-1">UI/UX Design</h1>
 
-          <h1 className="text-base font-primary text-zinc-400 cursor-pointer">
-            {"UI/UX Design"}
-          </h1>
-
+          {/* <div className="mt-1">
+            <Tag text="UI/UX Design" />
+          </div> */}
         </div>
 
+        {/* Right button */}
         <div className="flex">
-          <button className="flex py-2 px-5 gap-x-3 justify-center items-center rounded-full hover:bg-zinc-400/50 duration-300 group">
+          <button
+            className="flex py-2 px-5 gap-x-3 justify-center items-center rounded-full hover:bg-zinc-400/50 duration-300 group"
+            onClick={() => setIsImageOpen(true)}
+          >
             <div className="flex text-zinc-400 text-2xl group-hover:text-white duration-300">
-              <CarouselIcon className=" " />
+              <CarouselIcon />
             </div>
             <p className="flex text-base">Carousel View</p>
           </button>
         </div>
       </div>
 
-      {/* <div className="flex w-[80%]">
-        <Carousel images={img} />
-      </div>  */}
-
-      {/* <div className="flex flex-row items-center justify-center gap-x-4 my-3">
-
-        <div className="flex flex-row gap-x-3">
-          {tech.map((techItem, index) => (
-            <Tag key={index} text={techItem} />
-          ))}
-        </div>
+      {/* <div className="flex w-full items-center justify-center mb-4">
+        <hr className="h-[1px] w-[65%] border-t-0 bg-border/50" />
       </div> */}
 
-      <div className="flex w-full items-center justify-center mb-4">
-        <hr className="h-[1px] w-[60%] border-t-0 bg-border/50" />
-      </div>
+      {/* DESIGN CONTENT BODY */}
 
-      <div className="grid grid-cols-2 gap-10 m-10 ">
+      <div className="grid grid-cols-2 gap-10 m-10 mt-5">
         <div className="flex ">
           {/* <p className="">
             Passive noise cancellation (PNC), also known as passive noise
@@ -76,12 +78,12 @@ const Test = () => {
             technology to actively cancel out noise, PNC relies on a physical
             barrier to minimize unwanted sounds.
           </p> */}
-          <img src={img[1]} alt="image" />
+          <img src={img[1]} alt="image" className="rounded-xl" />
         </div>
 
         <div className="flex ">
           <p className="">
-            <img src={img[2]} alt="image" />
+            <img src={img[2]} alt="image" className="rounded-xl" />
             {/* Passive noise cancellation (PNC), also known as passive noise
             isolation, reduces ambient noise by using physical design features
             like earcups, materials, and ear tip fit to block sound from
@@ -111,10 +113,13 @@ const Test = () => {
             technology to actively cancel out noise, PNC relies on a physical
             barrier to minimize unwanted sounds.
           </p> */}
-          <img src={img[3]} alt="image" />
+          <img src={img[3]} alt="image" className="rounded-xl" />
         </div>
-
       </div>
+
+      {isImageOpen && (
+        <CarouselModal images={img} onClose={() => setIsImageOpen(false)} />
+      )}
     </div>
   );
 };
