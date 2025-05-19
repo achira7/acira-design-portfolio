@@ -86,7 +86,7 @@ const Test = () => {
             technology to actively cancel out noise, PNC relies on a physical
             barrier to minimize unwanted sounds.
           </p> */}
-          <img src={img[1]} alt="image" className="rounded-xl" />
+          <img src={img[1]} alt="image" className="rounded-xl h-[20wv]" />
         </div>
 
         <div className="flex ">
@@ -121,7 +121,7 @@ const Test = () => {
             technology to actively cancel out noise, PNC relies on a physical
             barrier to minimize unwanted sounds.
           </p> */}
-          <img src={img[2]} alt="image" className="rounded-xl" />
+          <img src={img[2]} alt="image" className="rounded-xl h-96" />
         </div>
       </div>
 
