@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Designs  from "./pages/Designs";
 import About from "./pages/About";
+import AddProject from "./pages/backend/AddProject";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/design" element={<Designs />} />
           <Route path="/about" element={<Test />} /> {/*<About />*/}
+          <Route path="/add-product" element={<AddProject/>} />
         </Routes>
         </div>
         

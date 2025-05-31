@@ -7,10 +7,10 @@ import CarouselModal from "../components/CarouselModal";
 import ArrowLeft from "../assets/icons/ArrowLeft";
 import CarouselIcon from "../assets/icons/CarouselIcon";
 
-import img1 from '../assets/images/1.webp';
-import img2 from '../assets/images/2.webp';
-import img3 from '../assets/images/3.webp';
-import img4 from '../assets/images/4.webp';
+import img1 from "../assets/images/1.webp";
+import img2 from "../assets/images/2.webp";
+import img3 from "../assets/images/3.webp";
+import img4 from "../assets/images/4.webp";
 
 const title = "Be Yourseldf Design";
 
@@ -24,9 +24,7 @@ const tech = ["Figma", "InDesign"];
 //   "https://images.unsplash.com/photo-1478001517127-fccc92f54906?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fDE5MjB4MTA4MCUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D",
 // ];
 
-const img = [
-  img1, img2, img3, img4
-]
+const img = [img1, img2, img3, img4];
 
 const Test = () => {
   const [isImageOpen, setIsImageOpen] = useState(false);
@@ -34,9 +32,7 @@ const Test = () => {
   return (
     <div className="flex flex-col text-primary mt-2 font-primary items-center justify-center">
       {/* <div className="flex flex-row justify-center items-center gap-x-64 py-7 bg-teal-500"> */}
-      <div className="relative flex flex-row justify-between items-center w-[80%] mx-auto pt-10 pb-8">
-
-
+      <div className="relative flex flex-row justify-between items-center w-[80%] mx-auto py-12 pb-10 ">
         <div className="flex">
           <button
             className="flex-1 mx-5 rounded-full hover:bg-zinc-400/50 duration-300 p-1 group "
@@ -50,7 +46,9 @@ const Test = () => {
           <h1 className="text-2xl font-semibold cursor-default text-center">
             {title}
           </h1>
-          <h1 className="text-base font-primary text-zinc-400 cursor-pointer mt-1">UI/UX Design</h1>
+          <h1 className="text-base font-primary text-zinc-400 cursor-pointer mt-1">
+            UI/UX Design
+          </h1>
 
           {/* <div className="mt-1">
             <Tag text="UI/UX Design" />
@@ -76,7 +74,7 @@ const Test = () => {
 
       {/* DESIGN CONTENT BODY */}
 
-      <div className="grid grid-cols-2 gap-10 m-10 mt-5">
+      <div className="grid grid-cols-2 gap-10 w-[90%]  mt-5">
         <div className="flex ">
           {/* <p className="">
             Passive noise cancellation (PNC), also known as passive noise
@@ -123,6 +121,20 @@ const Test = () => {
           </p> */}
           <img src={img[2]} alt="image" className="rounded-xl h-96" />
         </div>
+      </div>
+
+      <div>
+        <iframe
+          style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
+          width="800"
+          height="450"
+          src="https://embed.figma.com/design/g8KrjDmZSY6yWMrLwRAgEy/Saptify-Calendar?node-id=67-7741&embed-host=share"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      <div>
+        <a href="/add-product"> Add Products</a>
       </div>
 
       {isImageOpen && (
