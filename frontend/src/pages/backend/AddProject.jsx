@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 
+import Close from "../../assets/icons/Close";
+import Code from "../../assets/icons/Code";
+import Paintbrush from "../../assets/icons/Paintbrush";
+import Tools from "../../assets/icons/Tools";
+import ExternalLink from "../../assets/icons/ExternalLink";
+import Behance from "../../assets/icons/Behance";
+import Dribble from "../../assets/icons/Dribble";
+
 const AddProject = () => {
   const [tools, setTools] = useState([]);
   const [inputValue, setInputValue] = useState("");
@@ -23,11 +31,17 @@ const AddProject = () => {
   return (
     <div className="flex flex-col items-center justify-center px-5 py-10 font-primary text-primary">
       <div className="flex w-full max-w-md sm:max-w-xl lg:max-w-2xl my-5 rounded-full overflow-hidden border-2 border-border bg-zinc-900">
-        <div className="w-1/2 text-center py-3 cursor-pointer hover:bg-zinc-700 duration-300">
-          Design
+        <div className="flex w-1/2 text-center py-3 cursor-pointer hover:bg-zinc-700 duration-300 items-center justify-center border-r border-border">
+          <p className="text-xl mr-4">
+            <Tools />
+          </p>
+          <p>Design</p>
         </div>
-        <div className="w-1/2 text-center py-3 cursor-pointer hover:bg-zinc-700 duration-300">
-          Development
+        <div className="flex w-1/2 text-center py-3 cursor-pointer hover:bg-zinc-700 duration-300 items-center justify-center border-l border-border">
+          <p className="text-2xl mr-4">
+            <Code />
+          </p>
+          <p>Development</p>
         </div>
       </div>
 
@@ -122,13 +136,16 @@ const AddProject = () => {
             {images.map((img, index) => (
               <div
                 key={index}
-                className="relative w-24 h-24 rounded-xl overflow-hidden border-2 border-border bg-zinc-800 group"
+                className={`relative w-24 h-24 rounded-xl overflow-hidden border-2 bg-zinc-800 group ${
+                  index === 0 ? "border-blue-500" : "border-border"
+                }`}
               >
                 <img
                   src={img.url}
                   alt={`upload-${index}`}
                   className="object-cover w-full h-full"
                 />
+
                 <button
                   type="button"
                   onClick={() => {
@@ -141,48 +158,88 @@ const AddProject = () => {
                 </button>
 
                 {/* Reorder Buttons */}
-                <div className="absolute bottom-1 left-1 flex gap-1 opacity-0 group-hover:opacity-100 transition">
-                  <button
-                    type="button"
-                    onClick={() =>
-                      index > 0 &&
-                      setImages((prev) => {
-                        const newArr = [...prev];
-                        [newArr[index], newArr[index - 1]] = [
-                          newArr[index - 1],
-                          newArr[index],
-                        ];
-                        return newArr;
-                      })
-                    }
-                    className="text-white bg-black/50 rounded-full px-2 py-1 text-xs"
-                  >
-                    ↑
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      index < images.length - 1 &&
-                      setImages((prev) => {
-                        const newArr = [...prev];
-                        [newArr[index], newArr[index + 1]] = [
-                          newArr[index + 1],
-                          newArr[index],
-                        ];
-                        return newArr;
-                      })
-                    }
-                    className="text-white bg-black/50 rounded-full px-2 py-1 text-xs"
-                  >
-                    ↓
-                  </button>
-                </div>
+                {images.length > 1 && (
+                  <div className="absolute bottom-1 left-1 flex gap-1 opacity-0 group-hover:opacity-100 transition">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        index > 0 &&
+                        setImages((prev) => {
+                          const newArr = [...prev];
+                          [newArr[index], newArr[index - 1]] = [
+                            newArr[index - 1],
+                            newArr[index],
+                          ];
+                          return newArr;
+                        })
+                      }
+                      className="text-white bg-black/50 rounded-full px-2 py-1 text-xs -rotate-90"
+                    >
+                      ↑
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        index < images.length - 1 &&
+                        setImages((prev) => {
+                          const newArr = [...prev];
+                          [newArr[index], newArr[index + 1]] = [
+                            newArr[index + 1],
+                            newArr[index],
+                          ];
+                          return newArr;
+                        })
+                      }
+                      className="text-white bg-black/50 rounded-full px-2 py-1 text-xs -rotate-90"
+                    >
+                      ↓
+                    </button>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Submit Button (optional styling) */}
+        <div className="flex flex-col gap-x-2 gap-y-5">
+          <label className="text-sm text-white/70">Links</label>
+          <div className="flex w-full">
+            <div className="flex w-1/2 items-center justify-evenly">
+              <Behance />
+              <input
+                type="text"
+                className="bg-zinc-800/60 text-white text-sm px-4 py-2 rounded-xl border-2 border-border focus:outline-none focus:border-white/70 transition"
+                placeholder="Behance Link"
+              />
+            </div>
+
+            <div className="flex w-1/2 items-center justify-evenly">
+              <Dribble />
+              <input
+                type="text"
+                className="bg-zinc-800/60 text-white text-sm px-4 py-2 rounded-xl border-2 border-border focus:outline-none focus:border-white/70 transition"
+                placeholder="Dribble Link"
+              />
+            </div>
+          </div>
+
+          <div className="flex w-full">
+            <div className="flex w-1/2 gap-1 items-center justify-evenly">
+              <ExternalLink />
+              <input
+                type="text"
+                className="bg-zinc-800/60 text-white text-sm px-4 py-2 rounded-xl border-2 border-border focus:outline-none focus:border-white/70 transition"
+                placeholder="External Link to the Design"
+              />
+            </div>
+
+            <div className="flex w-1/2 items-center justify-evenly">
+              
+            </div>
+          </div>
+        </div>
+
+        {/* Submit Button */}
         <button
           type="submit"
           className="mt-4 bg-white text-zinc-900 font-semibold py-2 px-6 rounded-full shadow-md hover:bg-white/80 transition w-fit self-center"

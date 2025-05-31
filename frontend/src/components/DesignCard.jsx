@@ -39,6 +39,13 @@ const DesignCard = ({ title, description, tech, img, behance, dribble, link, cat
     setIsExpanded(!isExpanded);
   };
 
+
+
+
+
+
+
+
   const truncatedDescription =
     description.length > maxLength && !isExpanded
       ? `${description.slice(0, maxLength)}...`
@@ -49,10 +56,6 @@ const DesignCard = ({ title, description, tech, img, behance, dribble, link, cat
       <h2 className="text-primary font-primary font-semibold text-xl mb-4">
         {title}
       </h2>
-
-      {/* <h2 className="text-primary font-primary text-sm mb-2">
-        {category}
-      </h2> */}
 
       <div className="flex w-20vh items-center justify-center group ">
         {img && (
