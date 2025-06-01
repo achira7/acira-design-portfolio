@@ -30,7 +30,8 @@ const AddProject = () => {
 
   return (
     <div className="flex flex-col items-center justify-center px-5 py-10 font-primary text-primary">
-      <div className="flex w-full max-w-md sm:max-w-xl lg:max-w-2xl my-5 rounded-full overflow-hidden border-2 border-border bg-zinc-900">
+      <h1 className="font-primary text-3xl font-semibold">Add a Project</h1>
+      <div className="flex w-full max-w-md sm:max-w-xl lg:max-w-2xl my-7 rounded-full overflow-hidden border-2 border-border bg-zinc-900">
         <div className="flex w-1/2 text-center py-3 cursor-pointer hover:bg-zinc-700 duration-300 items-center justify-center border-r border-border">
           <p className="text-xl mr-4">
             <Tools />
@@ -48,7 +49,11 @@ const AddProject = () => {
       <form className="w-full max-w-md sm:max-w-xl lg:max-w-2xl flex flex-col gap-6">
         {/* Category Dropdown */}
         <div className="flex flex-col gap-2">
-          <label className="text-sm text-white/70">Category</label>
+          <div className="flex">
+              <label className="text-sm text-white/70">Category</label>
+              <p className="text-primary text-sm text-red-500 ml-1">*</p>
+          </div>
+          
           <select
             name="category"
             id="category"
@@ -63,7 +68,11 @@ const AddProject = () => {
 
         {/* Project Title */}
         <div className="flex flex-col gap-2">
-          <label className="text-sm text-white/70">Project Title</label>
+          
+          <div className="flex">
+              <label className="text-sm text-white/70">Project Title</label>
+              <p className="text-primary text-sm text-red-500 ml-1">*</p>
+          </div>
           <input
             type="text"
             className="bg-zinc-800/60 text-white text-sm px-4 py-2 rounded-xl border-2 border-border focus:outline-none focus:border-white/70 transition"
@@ -237,6 +246,10 @@ const AddProject = () => {
               
             </div>
           </div>
+        </div>
+
+        <div>
+          <a href="/all-projects">All Projects</a>
         </div>
 
         {/* Submit Button */}
